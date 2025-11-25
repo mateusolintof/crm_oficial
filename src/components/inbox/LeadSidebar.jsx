@@ -96,7 +96,7 @@ const LeadSidebar = ({ isOpen, onClose, lead }) => {
                                     {leadDetails.tags.map((tag, index) => (
                                         <span
                                             key={index}
-                                            className="bg-amber-100 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full"
+                                            className="px-3 py-1 bg-sky-100 text-primary rounded-full text-xs font-medium"
                                         >
                                             {tag}
                                         </span>
@@ -129,7 +129,7 @@ const LeadSidebar = ({ isOpen, onClose, lead }) => {
                         {/* Footer Actions */}
                         <div className="p-6 border-t border-gray-200 flex gap-3">
                             <button className="flex-1 btn btn-ghost">Editar</button>
-                            <button className="flex-1 btn btn-primary">Converter</button>
+                            <button className="flex-1 btn btn-primary bg-primary hover:bg-primary-hover text-white">Converter</button>
                         </div>
                     </motion.div>
                 </>

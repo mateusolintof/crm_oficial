@@ -8,8 +8,8 @@ const PipelineSelector = ({ pipelines, currentPipeline, onSelect }) => {
                     key={pipeline.id}
                     onClick={() => onSelect(pipeline.id)}
                     className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${currentPipeline === pipeline.id
-                            ? 'bg-white text-sky-600 shadow-sm'
-                            : 'text-gray-500 hover:text-gray-700'
+                        ? 'bg-primary text-white shadow-md'
+                        : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200'
                         }`}
                 >
                     {pipeline.name}

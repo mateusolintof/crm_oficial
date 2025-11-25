@@ -44,17 +44,15 @@ const ChatList = ({ selectedChat, onSelectChat }) => {
     return (
         <div className="w-80 border-r border-gray-200 bg-white flex flex-col">
             <div className="p-4 border-b border-gray-200">
-                <h2 className="text-lg font-bold text-gray-900 mb-4">Conversas</h2>
                 <div className="relative">
-                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
                     <input
                         type="text"
-                        placeholder="Buscar conversa..."
-                        className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-sky-500"
+                        placeholder="Buscar conversas..."
+                        className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent text-sm"
                     />
                 </div>
             </div>
-
             <div className="flex-1 overflow-y-auto">
                 {mockChats.map((chat) => (
                     <div
@@ -72,7 +70,6 @@ const ChatList = ({ selectedChat, onSelectChat }) => {
                                     <div className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 rounded-full border-2 border-white"></div>
                                 )}
                             </div>
-
                             <div className="flex-1 min-w-0">
                                 <div className="flex items-center justify-between mb-1">
                                     <h3 className="font-bold text-gray-900 text-sm truncate">{chat.name}</h3>
@@ -81,7 +78,6 @@ const ChatList = ({ selectedChat, onSelectChat }) => {
                                 <p className="text-xs text-gray-500 mb-1">{chat.company}</p>
                                 <p className="text-sm text-gray-600 truncate">{chat.lastMessage}</p>
                             </div>
-
                             {chat.unread > 0 && (
                                 <div className="bg-sky-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center shrink-0">
                                     {chat.unread}

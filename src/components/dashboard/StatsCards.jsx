@@ -47,14 +47,14 @@ const StatsCards = () => {
                 <div key={index} className="card flex flex-col justify-between hover:shadow-md transition-shadow">
                     <div className="flex items-start justify-between mb-4">
                         <div>
-                            <p className="text-sm font-medium text-gray-500">{stat.label}</p>
-                            <h3 className="text-2xl font-bold text-gray-900 mt-1">{stat.value}</h3>
+                            <p className="text-sm font-medium text-secondary">{stat.label}</p>
+                            <h3 className="text-2xl font-bold text-primary mt-1">{stat.value}</h3>
                         </div>
                         <div className={`p-3 rounded-lg ${stat.bg} ${stat.color}`}>
                             <stat.icon size={20} />
                         </div>
                     </div>
-                    <div className={`text-xs font-medium ${stat.trendUp ? 'text-emerald-600' : 'text-red-500'}`}>
+                    <div className={`text-xs font-medium ${stat.trendUp ? 'text-success' : 'text-danger'}`}>
                         {stat.trend}
                     </div>
                 </div>

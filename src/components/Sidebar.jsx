@@ -12,7 +12,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <motion.aside 
+    <motion.aside
       initial={{ x: -20, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       className="w-64 bg-white border-r border-gray-200 h-screen flex flex-col sticky top-0"
@@ -28,10 +28,9 @@ const Sidebar = () => {
             key={item.path}
             to={item.path}
             className={({ isActive }) =>
-              `flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
-                isActive
-                  ? 'bg-sky-50 text-sky-700 font-medium'
-                  : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900'
+              `flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${isActive
+                ? 'bg-primary text-white'
+                : 'text-gray-400 hover:bg-gray-800 hover:text-white'
               }`
             }
           >

@@ -70,7 +70,7 @@ const ChatWindow = ({ chat, onToggleLeadInfo }) => {
             {/* Header */}
             <div className="bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-sky-400 to-sky-600 flex items-center justify-center text-white font-bold">
+                    <div className="p-2 bg-primary text-white rounded-full hover:bg-primary-hover transition-colors shadow-md flex items-center justify-center font-bold">
                         {chat.name.split(' ').map(n => n[0]).join('')}
                     </div>
                     <div>
@@ -98,9 +98,9 @@ const ChatWindow = ({ chat, onToggleLeadInfo }) => {
                         className={`flex ${message.sender === 'agent' ? 'justify-end' : 'justify-start'}`}
                     >
                         <div
-                            className={`max-w-md px-4 py-2 rounded-2xl ${message.sender === 'agent'
-                                    ? 'bg-sky-600 text-white'
-                                    : 'bg-white border border-gray-200 text-gray-900'
+                            className={`max-w-[70%] p-3 rounded-2xl ${message.sender === 'agent'
+                                ? 'bg-primary text-white rounded-tr-none'
+                                : 'bg-white text-gray-800 rounded-tl-none shadow-sm'
                                 }`}
                         >
                             <p className="text-sm">{message.text}</p>

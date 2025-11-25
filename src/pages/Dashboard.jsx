@@ -17,7 +17,7 @@ const Dashboard = () => {
                     <p className="text-gray-500 mt-1">Visão geral da performance da agência</p>
                 </div>
                 <div className="flex gap-3">
-                    <select className="bg-white border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-sky-500 focus:border-sky-500 block w-full p-2.5">
+                    <select className="bg-white border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5">
                         <option>Últimos 30 dias</option>
                         <option>Este Mês</option>
                         <option>Últimos 3 Meses</option>
