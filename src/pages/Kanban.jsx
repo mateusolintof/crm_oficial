@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import Board from '../components/kanban/Board';
 import PipelineSelector from '../components/kanban/PipelineSelector';
 import { Plus } from 'lucide-react';
-
-const pipelines = [
-    { id: 'sales', name: 'Vendas' },
-    { id: 'support', name: 'Atendimento' },
-    { id: 'onboarding', name: 'Onboarding' },
-];
+import { useCRMStore } from '../store/useCRMStore';
+import { useUIStore } from '../store/useUIStore';
+import { Button } from '../components/ui/Button';
 
 const Kanban = () => {
-    const [currentPipeline, setCurrentPipeline] = useState('sales');
+    const { pipelines, currentPipeline, setPipeline } = useCRMStore();
+    const { openModal } = useUIStore();
 
     return (
         <motion.div
@@ -25,16 +23,16 @@ const Kanban = () => {
                     <h1 className="text-2xl font-bold text-gray-900">Pipeline de Vendas</h1>
                     <p className="text-gray-500 mt-1">Gerencie seus leads e oportunidades</p>
                 </div>
-                <button className="btn btn-primary gap-2">
+                <Button onClick={() => openModal('create-lead')} className="gap-2">
                     <Plus size={20} />
                     Novo Lead
-                </button>
+                </Button>
             </div>
 
             <PipelineSelector
                 pipelines={pipelines}
                 currentPipeline={currentPipeline}
-                onSelect={setCurrentPipeline}
+                onSelect={setPipeline}
             />
 
             <div className="flex-1 overflow-hidden">
