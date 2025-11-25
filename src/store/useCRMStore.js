@@ -8,22 +8,22 @@ const initialPipelines = [
 
 const initialColumns = {
     sales: [
-        { id: 'new', title: 'Novos Leads', color: 'bg-blue-500' },
-        { id: 'qualified', title: 'Qualificados IA', color: 'bg-emerald-500' },
+        { id: 'new', title: 'Novos Leads', color: 'bg-primary' },
+        { id: 'qualified', title: 'Qualificados IA', color: 'bg-emerald-600' },
         { id: 'negotiation', title: 'Em Negociação', color: 'bg-amber-500' },
-        { id: 'contract', title: 'Contrato', color: 'bg-indigo-500' },
-        { id: 'closed', title: 'Fechados', color: 'bg-purple-500' },
+        { id: 'contract', title: 'Contrato', color: 'bg-slate-600' },
+        { id: 'closed', title: 'Fechados', color: 'bg-slate-400' },
     ],
     support: [
-        { id: 'ticket_open', title: 'Aberto', color: 'bg-red-500' },
-        { id: 'ticket_progress', title: 'Em Andamento', color: 'bg-yellow-500' },
-        { id: 'ticket_resolved', title: 'Resolvido', color: 'bg-green-500' },
+        { id: 'ticket_open', title: 'Aberto', color: 'bg-amber-500' },
+        { id: 'ticket_progress', title: 'Em Andamento', color: 'bg-primary' },
+        { id: 'ticket_resolved', title: 'Resolvido', color: 'bg-emerald-600' },
     ],
     onboarding: [
-        { id: 'kickoff', title: 'Kickoff', color: 'bg-blue-500' },
-        { id: 'setup', title: 'Configuração', color: 'bg-purple-500' },
+        { id: 'kickoff', title: 'Kickoff', color: 'bg-primary' },
+        { id: 'setup', title: 'Configuração', color: 'bg-slate-600' },
         { id: 'training', title: 'Treinamento', color: 'bg-amber-500' },
-        { id: 'live', title: 'Go Live', color: 'bg-green-500' },
+        { id: 'live', title: 'Go Live', color: 'bg-emerald-600' },
     ]
 };
 

@@ -15,8 +15,8 @@ const ChatList = ({ selectedChat, onSelectChat }) => {
     );
 
     return (
-        <div className="w-80 border-r border-gray-200 bg-white flex flex-col">
-            <div className="p-4 border-b border-gray-200">
+        <div className="w-80 border-r border-border bg-white/90 flex flex-col">
+            <div className="p-4 border-b border-border">
                 <div className="relative">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
                     <Input
@@ -33,7 +33,7 @@ const ChatList = ({ selectedChat, onSelectChat }) => {
                     <div
                         key={chat.id}
                         onClick={() => onSelectChat(chat)}
-                        className={`p-4 border-b border-gray-100 cursor-pointer transition-colors hover:bg-gray-50 ${selectedChat?.id === chat.id ? 'bg-sky-50' : ''
+                        className={`p-4 border-b border-border/70 cursor-pointer transition-colors hover:bg-slate-50 ${selectedChat?.id === chat.id ? 'bg-primary-soft border-l-2 border-primary' : ''
                             }`}
                     >
                         <div className="flex items-start gap-3">

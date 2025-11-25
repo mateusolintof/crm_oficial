@@ -56,8 +56,8 @@ const ChatWindow = ({ chat, onToggleLeadInfo }) => {
 
     if (!chat) {
         return (
-            <div className="flex-1 bg-gray-50 flex items-center justify-center">
-                <div className="text-center text-gray-400">
+            <div className="flex-1 bg-slate-50 flex items-center justify-center">
+                <div className="text-center text-slate-400">
                     <p className="text-lg font-medium">Selecione uma conversa</p>
                     <p className="text-sm mt-2">Escolha um contato para iniciar o atendimento</p>
                 </div>
@@ -66,21 +66,21 @@ const ChatWindow = ({ chat, onToggleLeadInfo }) => {
     }
 
     return (
-        <div className="flex-1 bg-gray-50 flex flex-col">
+        <div className="flex-1 bg-slate-50 flex flex-col">
             {/* Header */}
-            <div className="bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between">
+            <div className="bg-white border-b border-border px-6 py-4 flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                    <div className="p-2 bg-primary text-white rounded-full hover:bg-primary-hover transition-colors shadow-md flex items-center justify-center font-bold">
-                        {chat.name.split(' ').map(n => n[0]).join('')}
+                    <div className="p-2 bg-primary text-white rounded-full hover:bg-primary-strong transition-colors shadow-md flex items-center justify-center font-bold">
+                        {chat.contact.split(' ').map(n => n[0]).join('')}
                     </div>
                     <div>
-                        <h3 className="font-bold text-gray-900">{chat.name}</h3>
-                        <p className="text-xs text-gray-500">{chat.company}</p>
+                        <h3 className="font-bold text-ink">{chat.contact}</h3>
+                        <p className="text-xs text-slate-500">{chat.company}</p>
                     </div>
                 </div>
                 <button
                     onClick={onToggleLeadInfo}
-                    className="btn btn-ghost gap-2"
+                    className="btn btn-ghost gap-2 border border-border rounded-lg"
                 >
                     <Info size={18} />
                     Informações
@@ -99,13 +99,13 @@ const ChatWindow = ({ chat, onToggleLeadInfo }) => {
                     >
                         <div
                             className={`max-w-[70%] p-3 rounded-2xl ${message.sender === 'agent'
-                                ? 'bg-primary text-white rounded-tr-none'
-                                : 'bg-white text-gray-800 rounded-tl-none shadow-sm'
+                                ? 'bg-primary text-white rounded-tr-none shadow-sm'
+                                : 'bg-white text-ink rounded-tl-none shadow-sm border border-border'
                                 }`}
                         >
                             <p className="text-sm">{message.text}</p>
                             <p
-                                className={`text-xs mt-1 ${message.sender === 'agent' ? 'text-sky-100' : 'text-gray-400'
+                                className={`text-xs mt-1 ${message.sender === 'agent' ? 'text-primary-soft' : 'text-slate-500'
                                     }`}
                             >
                                 {message.time}
@@ -116,7 +116,7 @@ const ChatWindow = ({ chat, onToggleLeadInfo }) => {
             </div>
 
             {/* Input */}
-            <div className="bg-white border-t border-gray-200 p-4">
+            <div className="bg-white border-t border-border p-4">
                 <div className="flex items-center gap-3">
                     <button className="text-gray-400 hover:text-gray-600">
                         <Paperclip size={20} />
@@ -130,7 +130,7 @@ const ChatWindow = ({ chat, onToggleLeadInfo }) => {
                         onChange={(e) => setInputValue(e.target.value)}
                         onKeyPress={(e) => e.key === 'Enter' && handleSend()}
                         placeholder="Digite sua mensagem..."
-                        className="flex-1 px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-sky-500"
+                        className="flex-1 px-4 py-2 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
                     />
                     <button onClick={handleSend} className="btn btn-primary gap-2">
                         <Send size={18} />

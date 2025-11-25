@@ -8,17 +8,17 @@ export function cn(...inputs) {
 
 const Button = React.forwardRef(({ className, variant = 'default', size = 'default', ...props }, ref) => {
     const variants = {
-        default: 'bg-primary text-white hover:bg-primary-hover shadow-sm',
-        secondary: 'bg-white text-gray-900 border border-gray-200 hover:bg-gray-50 shadow-sm',
-        ghost: 'bg-transparent text-gray-600 hover:bg-gray-100 hover:text-gray-900',
-        danger: 'bg-red-500 text-white hover:bg-red-600 shadow-sm',
-        outline: 'bg-transparent border border-gray-200 text-gray-700 hover:bg-gray-50',
+        default: 'bg-primary text-white hover:bg-primary-strong shadow-sm',
+        secondary: 'bg-white text-ink border border-border hover:bg-slate-50 shadow-sm',
+        ghost: 'bg-transparent text-slate-600 hover:bg-slate-100 hover:text-ink',
+        danger: 'bg-rose-500 text-white hover:bg-rose-600 shadow-sm',
+        outline: 'bg-transparent border border-border text-slate-700 hover:bg-slate-50',
     };
 
     const sizes = {
-        default: 'h-10 px-4 py-2',
+        default: 'h-10 px-3.5 text-[15px]',
         sm: 'h-8 px-3 text-xs',
-        lg: 'h-12 px-8 text-lg',
+        lg: 'h-12 px-5 text-base',
         icon: 'h-10 w-10 p-0 flex items-center justify-center',
     };
 

@@ -13,16 +13,17 @@ const Dashboard = () => {
         >
             <div className="flex items-center justify-between mb-8">
                 <div>
-                    <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
-                    <p className="text-gray-500 mt-1">Visão geral da performance da agência</p>
+                    <p className="text-xs uppercase tracking-[0.2em] text-slate-500">Inteligência</p>
+                    <h1 className="text-2xl font-bold text-ink">Dashboard</h1>
+                    <p className="text-slate-600 mt-1">Visão executiva da performance comercial e atendimento</p>
                 </div>
                 <div className="flex gap-3">
-                    <select className="bg-white border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5">
+                    <select className="bg-white border border-border text-ink text-sm rounded-xl focus:ring-primary focus:border-primary block w-full px-3 py-2 shadow-sm">
                         <option>Últimos 30 dias</option>
                         <option>Este Mês</option>
                         <option>Últimos 3 Meses</option>
                     </select>
-                    <button className="btn btn-primary">Exportar Relatório</button>
+                    <button className="btn btn-primary rounded-xl shadow-sm">Exportar Relatório</button>
                 </div>
             </div>
 

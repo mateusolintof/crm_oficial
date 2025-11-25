@@ -46,17 +46,18 @@ const LeadList = () => {
             {/* Header */}
             <div className="flex items-center justify-between">
                 <div>
-                    <h1 className="text-2xl font-bold text-gray-900">Gestão de Leads</h1>
-                    <p className="text-gray-500 mt-1">Visualize e gerencie todos os seus leads</p>
+                    <p className="text-xs uppercase tracking-[0.2em] text-slate-500">CRM</p>
+                    <h1 className="text-2xl font-bold text-ink">Gestão de Leads</h1>
+                    <p className="text-slate-600 mt-1">Visualize e gerencie todos os seus leads</p>
                 </div>
-                <Button onClick={() => openModal('create-lead')} className="gap-2">
+                <Button onClick={() => openModal('create-lead')} className="gap-2 rounded-xl shadow-sm">
                     <Plus size={18} />
                     Novo Lead
                 </Button>
             </div>
 
             {/* Search & Filters */}
-            <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
+            <div className="bg-white/90 p-4 rounded-2xl border border-border shadow-sm">
                 <div className="flex gap-3">
                     <div className="flex-1 relative">
                         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
@@ -68,7 +69,7 @@ const LeadList = () => {
                             className="pl-10"
                         />
                     </div>
-                    <Button variant="outline" className="gap-2">
+                    <Button variant="outline" className="gap-2 rounded-xl">
                         <Filter size={18} />
                         Filtros
                     </Button>
@@ -76,28 +77,28 @@ const LeadList = () => {
             </div>
 
             {/* Table */}
-            <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+            <div className="bg-white rounded-2xl border border-border shadow-sm overflow-hidden">
                 <div className="overflow-x-auto">
                     <table className="w-full">
-                        <thead className="bg-gray-50 border-b border-gray-200">
+                        <thead className="bg-slate-50 border-b border-border">
                             <tr>
-                                <th className="px-6 py-3 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Lead</th>
-                                <th className="px-6 py-3 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Contato</th>
-                                <th className="px-6 py-3 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Valor</th>
-                                <th className="px-6 py-3 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Estágio</th>
-                                <th className="px-6 py-3 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Tags</th>
-                                <th className="px-6 py-3 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Data</th>
-                                <th className="px-6 py-3 text-right text-xs font-bold text-gray-600 uppercase tracking-wider">Ações</th>
+                                <th className="px-6 py-3 text-left text-xs font-bold text-slate-600 uppercase tracking-wider">Lead</th>
+                                <th className="px-6 py-3 text-left text-xs font-bold text-slate-600 uppercase tracking-wider">Contato</th>
+                                <th className="px-6 py-3 text-left text-xs font-bold text-slate-600 uppercase tracking-wider">Valor</th>
+                                <th className="px-6 py-3 text-left text-xs font-bold text-slate-600 uppercase tracking-wider">Estágio</th>
+                                <th className="px-6 py-3 text-left text-xs font-bold text-slate-600 uppercase tracking-wider">Tags</th>
+                                <th className="px-6 py-3 text-left text-xs font-bold text-slate-600 uppercase tracking-wider">Data</th>
+                                <th className="px-6 py-3 text-right text-xs font-bold text-slate-600 uppercase tracking-wider">Ações</th>
                             </tr>
                         </thead>
-                        <tbody className="divide-y divide-gray-200">
+                        <tbody className="divide-y divide-border">
                             {filteredLeads.map((lead, index) => (
                                 <motion.tr
                                     key={lead.id}
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: index * 0.05 }}
-                                    className="hover:bg-gray-50 transition-colors cursor-pointer"
+                                    className="hover:bg-slate-50 transition-colors cursor-pointer"
                                 >
                                     <td className="px-6 py-4 whitespace-nowrap">
                                         <div className="flex items-center gap-3">
@@ -135,7 +136,7 @@ const LeadList = () => {
                                     <td className="px-6 py-4 whitespace-nowrap">
                                         <div className="flex gap-1">
                                             {lead.tags?.map((tag, i) => (
-                                                <span key={i} className="px-2 py-0.5 bg-gray-100 text-gray-600 text-[10px] rounded-full border border-gray-200">
+                                                <span key={i} className="px-2 py-0.5 bg-slate-100 text-slate-600 text-[10px] rounded-full border border-border">
                                                     {tag}
                                                 </span>
                                             ))}
@@ -165,7 +166,7 @@ const LeadList = () => {
                 </div>
 
                 {filteredLeads.length === 0 && (
-                    <div className="text-center py-12 text-gray-400">
+                    <div className="text-center py-12 text-slate-400">
                         <p>Nenhum lead encontrado</p>
                     </div>
                 )}
@@ -173,23 +174,23 @@ const LeadList = () => {
 
             {/* Stats Footer */}
             <div className="grid grid-cols-4 gap-4">
-                <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm text-center">
+                <div className="bg-white p-4 rounded-xl border border-border shadow-sm text-center">
                     <p className="text-2xl font-bold text-gray-900">{leads.length}</p>
                     <p className="text-sm text-gray-500 mt-1">Total de Leads</p>
                 </div>
-                <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm text-center">
+                <div className="bg-white p-4 rounded-xl border border-border shadow-sm text-center">
                     <p className="text-2xl font-bold text-emerald-600">
                         {leads.filter(l => l.status === 'qualified').length}
                     </p>
                     <p className="text-sm text-gray-500 mt-1">Qualificados</p>
                 </div>
-                <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm text-center">
+                <div className="bg-white p-4 rounded-xl border border-border shadow-sm text-center">
                     <p className="text-2xl font-bold text-amber-600">
                         {leads.filter(l => l.status === 'negotiation').length}
                     </p>
                     <p className="text-sm text-gray-500 mt-1">Em Negociação</p>
                 </div>
-                <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm text-center">
+                <div className="bg-white p-4 rounded-xl border border-border shadow-sm text-center">
                     <p className="text-2xl font-bold text-indigo-600">
                         {leads.filter(l => l.status === 'closed').length}
                     </p>

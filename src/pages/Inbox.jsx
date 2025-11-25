@@ -13,7 +13,7 @@ const Inbox = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
-            className="h-full flex border border-gray-200 rounded-lg overflow-hidden bg-white relative"
+            className="h-full flex border border-border rounded-2xl overflow-hidden bg-white/90 relative shadow-sm"
         >
             <ChatList selectedChat={selectedChat} onSelectChat={setSelectedChat} />
             <ChatWindow

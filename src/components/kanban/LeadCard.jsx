@@ -21,11 +21,11 @@ const LeadCard = ({ lead }) => {
 
     const getTagColor = (tag) => {
         switch (tag) {
-            case 'Novo': return 'bg-blue-100 text-blue-700';
-            case 'Quente': return 'bg-amber-100 text-amber-700';
-            case 'Qualificado IA': return 'bg-emerald-100 text-emerald-700';
-            case 'Contrato': return 'bg-indigo-100 text-indigo-700';
-            default: return 'bg-gray-100 text-gray-700';
+            case 'Novo': return 'bg-primary-soft text-primary border border-primary/20';
+            case 'Quente': return 'bg-amber-50 text-amber-700 border border-amber-100';
+            case 'Qualificado IA': return 'bg-emerald-50 text-emerald-700 border border-emerald-100';
+            case 'Contrato': return 'bg-slate-100 text-slate-700 border border-slate-200';
+            default: return 'bg-slate-50 text-slate-600 border border-slate-200';
         }
     };
 
@@ -35,7 +35,7 @@ const LeadCard = ({ lead }) => {
             style={style}
             {...attributes}
             {...listeners}
-            className="bg-white p-4 rounded-lg shadow-sm border border-gray-200 mb-3 cursor-grab active:cursor-grabbing hover:shadow-md transition-shadow"
+            className="bg-white/95 p-3 rounded-lg shadow-sm border border-border mb-2 cursor-grab active:cursor-grabbing hover:shadow-md transition-shadow"
         >
             <div className="flex justify-between items-start mb-2">
                 <div className="flex flex-wrap gap-1">
@@ -50,15 +50,15 @@ const LeadCard = ({ lead }) => {
                 </button>
             </div>
 
-            <h4 className="font-bold text-gray-900 text-sm mb-1">{lead.company}</h4>
-            <p className="text-xs text-gray-500 mb-3">{lead.contact}</p>
+            <h4 className="font-semibold text-ink text-sm mb-1">{lead.company}</h4>
+            <p className="text-xs text-slate-600 mb-3">{lead.contact}</p>
 
-            <div className="flex items-center justify-between pt-3 border-t border-gray-100">
-                <div className="flex items-center gap-1 text-xs font-medium text-gray-700">
-                    <DollarSign size={12} className="text-gray-400" />
+            <div className="flex items-center justify-between pt-3 border-t border-border">
+                <div className="flex items-center gap-1 text-xs font-semibold text-ink">
+                    <DollarSign size={12} className="text-slate-400" />
                     {lead.value}
                 </div>
-                <div className="flex items-center gap-1 text-[10px] text-gray-400">
+                <div className="flex items-center gap-1 text-[11px] text-slate-500">
                     <Calendar size={12} />
                     {lead.date}
                 </div>

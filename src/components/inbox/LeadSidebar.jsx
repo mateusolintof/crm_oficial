@@ -38,9 +38,9 @@ const LeadSidebar = ({ isOpen, onClose, lead }) => {
                         className="fixed right-0 top-0 h-full w-96 bg-white shadow-2xl z-50 flex flex-col"
                     >
                         {/* Header */}
-                        <div className="p-6 border-b border-gray-200 flex items-center justify-between">
-                            <h2 className="text-xl font-bold text-gray-900">Informações do Lead</h2>
-                            <button onClick={onClose} className="text-gray-400 hover:text-gray-600">
+                        <div className="p-6 border-b border-border flex items-center justify-between">
+                            <h2 className="text-xl font-bold text-ink">Informações do Lead</h2>
+                            <button onClick={onClose} className="text-slate-400 hover:text-slate-600">
                                 <X size={24} />
                             </button>
                         </div>
@@ -49,46 +49,46 @@ const LeadSidebar = ({ isOpen, onClose, lead }) => {
                         <div className="flex-1 overflow-y-auto p-6 space-y-6">
                             {/* Profile */}
                             <div className="text-center">
-                                <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-sky-400 to-sky-600 flex items-center justify-center text-white font-bold text-2xl mb-3">
-                                    {lead.name.split(' ').map(n => n[0]).join('')}
+                                <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-2xl mb-3">
+                                    {lead.contact.split(' ').map((n) => n[0]).join('')}
                                 </div>
-                                <h3 className="font-bold text-gray-900 text-lg">{lead.name}</h3>
-                                <p className="text-sm text-gray-500">{lead.company}</p>
+                                <h3 className="font-bold text-ink text-lg">{lead.contact}</h3>
+                                <p className="text-sm text-slate-500">{lead.company}</p>
                             </div>
 
                             {/* Contact Info */}
                             <div className="space-y-3">
-                                <h4 className="font-bold text-gray-900 text-sm uppercase tracking-wider">Contato</h4>
+                                <h4 className="font-bold text-ink text-sm uppercase tracking-wider">Contato</h4>
                                 <div className="flex items-center gap-3 text-sm">
-                                    <Mail size={16} className="text-gray-400" />
-                                    <span className="text-gray-700">{leadDetails.email}</span>
+                                    <Mail size={16} className="text-slate-400" />
+                                    <span className="text-slate-700">{leadDetails.email}</span>
                                 </div>
                                 <div className="flex items-center gap-3 text-sm">
-                                    <Phone size={16} className="text-gray-400" />
-                                    <span className="text-gray-700">{leadDetails.phone}</span>
+                                    <Phone size={16} className="text-slate-400" />
+                                    <span className="text-slate-700">{leadDetails.phone}</span>
                                 </div>
                                 <div className="flex items-center gap-3 text-sm">
-                                    <MapPin size={16} className="text-gray-400" />
-                                    <span className="text-gray-700">{leadDetails.location}</span>
+                                    <MapPin size={16} className="text-slate-400" />
+                                    <span className="text-slate-700">{leadDetails.location}</span>
                                 </div>
                             </div>
 
                             {/* Deal Info */}
                             <div className="space-y-3">
-                                <h4 className="font-bold text-gray-900 text-sm uppercase tracking-wider">Oportunidade</h4>
+                                <h4 className="font-bold text-ink text-sm uppercase tracking-wider">Oportunidade</h4>
                                 <div className="flex items-center gap-3 text-sm">
-                                    <DollarSign size={16} className="text-gray-400" />
-                                    <span className="text-gray-700 font-medium">{leadDetails.value}</span>
+                                    <DollarSign size={16} className="text-slate-400" />
+                                    <span className="text-slate-800 font-medium">{leadDetails.value}</span>
                                 </div>
                                 <div className="flex items-center gap-3 text-sm">
-                                    <Calendar size={16} className="text-gray-400" />
-                                    <span className="text-gray-700">Criado em {leadDetails.created}</span>
+                                    <Calendar size={16} className="text-slate-400" />
+                                    <span className="text-slate-700">Criado em {leadDetails.created}</span>
                                 </div>
                             </div>
 
                             {/* Tags */}
                             <div className="space-y-3">
-                                <h4 className="font-bold text-gray-900 text-sm uppercase tracking-wider flex items-center gap-2">
+                                <h4 className="font-bold text-ink text-sm uppercase tracking-wider flex items-center gap-2">
                                     <Tag size={16} />
                                     Tags
                                 </h4>
@@ -96,7 +96,7 @@ const LeadSidebar = ({ isOpen, onClose, lead }) => {
                                     {leadDetails.tags.map((tag, index) => (
                                         <span
                                             key={index}
-                                            className="px-3 py-1 bg-sky-100 text-primary rounded-full text-xs font-medium"
+                                            className="px-3 py-1 bg-primary-soft text-primary rounded-full text-xs font-medium"
                                         >
                                             {tag}
                                         </span>
@@ -106,30 +106,30 @@ const LeadSidebar = ({ isOpen, onClose, lead }) => {
 
                             {/* Notes */}
                             <div className="space-y-3">
-                                <h4 className="font-bold text-gray-900 text-sm uppercase tracking-wider">Anotações</h4>
-                                <p className="text-sm text-gray-600 leading-relaxed">{leadDetails.notes}</p>
+                                <h4 className="font-bold text-ink text-sm uppercase tracking-wider">Anotações</h4>
+                                <p className="text-sm text-slate-600 leading-relaxed">{leadDetails.notes}</p>
                             </div>
 
                             {/* Custom Fields */}
                             <div className="space-y-3">
-                                <h4 className="font-bold text-gray-900 text-sm uppercase tracking-wider">Campos Personalizados</h4>
+                                <h4 className="font-bold text-ink text-sm uppercase tracking-wider">Campos Personalizados</h4>
                                 <div className="space-y-2">
                                     <div>
-                                        <label className="text-xs text-gray-500">Origem</label>
-                                        <p className="text-sm font-medium text-gray-900">Instagram</p>
+                                        <label className="text-xs text-slate-500">Origem</label>
+                                        <p className="text-sm font-medium text-ink">Instagram</p>
                                     </div>
                                     <div>
-                                        <label className="text-xs text-gray-500">Interesse Principal</label>
-                                        <p className="text-sm font-medium text-gray-900">Marketing de Conteúdo</p>
+                                        <label className="text-xs text-slate-500">Interesse Principal</label>
+                                        <p className="text-sm font-medium text-ink">Marketing de Conteúdo</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         {/* Footer Actions */}
-                        <div className="p-6 border-t border-gray-200 flex gap-3">
-                            <button className="flex-1 btn btn-ghost">Editar</button>
-                            <button className="flex-1 btn btn-primary bg-primary hover:bg-primary-hover text-white">Converter</button>
+                        <div className="p-6 border-t border-border flex gap-3">
+                            <button className="flex-1 btn btn-ghost rounded-xl">Editar</button>
+                            <button className="flex-1 btn btn-primary bg-primary hover:bg-primary-strong text-white rounded-xl">Converter</button>
                         </div>
                     </motion.div>
                 </>

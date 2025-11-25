@@ -76,12 +76,13 @@ const Board = () => {
             onDragStart={handleDragStart}
             onDragEnd={handleDragEnd}
         >
-            <div className="flex gap-6 h-full overflow-x-auto pb-4">
+            <div className="flex gap-4 h-full overflow-x-auto pb-4 pr-1">
                 {pipelineColumns.map((column) => (
                     <Column
                         key={column.id}
                         id={column.id}
                         title={column.title}
+                        color={column.color}
                         leads={leadsByColumn[column.id] || []}
                         count={(leadsByColumn[column.id] || []).length}
                     />
